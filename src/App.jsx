@@ -1,4 +1,4 @@
-import Signup from "./components/signUp"
+
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
    <div>
-     <Signup/>
+
    </div>
   )
 }
