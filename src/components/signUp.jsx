@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup'
 import { client } from "../../lib/axios";
 import { toast } from "react-toastify";
+import { NavLink } from "react-router-dom";
 
 const SignUpForm = () => {
    const schema = yup.object({
@@ -90,7 +91,11 @@ const SignUpForm = () => {
         <div className="flex justify-center mt-4">
           <p className="text-black">
             Already have an account?
-            <span className="text-[#4cb5f9]">Login</span>
+            <span className="text-[#4cb5f9]">
+                <NavLink to="login">
+                    login
+                </NavLink>
+            </span>
           </p>
         </div>
       </div>
