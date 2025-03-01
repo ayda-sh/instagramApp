@@ -5,7 +5,7 @@ import * as yup from 'yup'
 import { client } from "../../lib/axios";
 import { toast } from "react-toastify";
 
-function Signup() {
+function SignUpForm() {
 
     const schema = yup.object({
         username: yup.string().required(),
@@ -47,4 +47,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default SignUpForm;
