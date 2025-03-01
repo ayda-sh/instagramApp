@@ -5,7 +5,7 @@ import * as yup from 'yup'
 import { client } from "../../lib/axios";
 import { toast } from "react-toastify";
 
-function SignUpForm() {
+const  SignUpForm = () => {
 
     const schema = yup.object({
         username: yup.string().required(),
