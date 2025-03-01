@@ -55,18 +55,21 @@ const SignUpForm = () => {
           <img className="w-[100]" src="src/assets/Group 2015.png" alt="" />
         </div>
         <div className="mt-4 justify-center flex">
-          <form className="justify-center flex flex-col">
+          <form onSubmit={handleSubmit(submitForm)} className="justify-center flex flex-col">
             <label className="input input-bordered flex items-center gap-2  bg-[#fafafa]">
-              <input type="text" className="grow" placeholder="Email" />
+              <input {...register("Email")} type="text" className="grow" placeholder="Email" />
+              {errors?.email ? <span className="text-error">{errors.email.message}</span> : null}
             </label>
 
             <label className="input input-bordered flex items-center gap-2 mt-3 bg-[#fafafa]">
-              <input type="text" className="grow" placeholder="Username" />
+              <input {...register("Username")} type="text" className="grow" placeholder="Username" />
+              {errors?.username ? <span className="text-error">{errors.email.message}</span> : null}
             </label>
 
             <label className="input input-bordered flex items-center gap-2 mt-3 bg-[#fafafa]">
-              <input type="password" className="grow" placeholder="password" />
+              <input {...register("password")} type="password" className="grow" placeholder="password" />
               <svg
+                onClick={toggleShowPassword}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
                 fill="currentColor"
@@ -78,6 +81,7 @@ const SignUpForm = () => {
                   clipRule="evenodd"
                 />
               </svg>
+              {errors?.password ? <span className="text-error">{errors.email.message}</span> : null}
             </label>
 
             <button
