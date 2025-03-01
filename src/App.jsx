@@ -11,11 +11,11 @@ function App() {
    <div>
     <Routes>
     <Route path="/" element={<SignUpForm/>} />
-    <Route path="signup" element={<SignUpForm/>} />
-    <Route path="login" element={<LogIn/>} />
+    <Route path="/signup" element={<SignUpForm/>} />
+    <Route path="/login" element={<LogIn/>} />
     </Routes>
    </div>
   )
 }
 
-export default App
+export default App;

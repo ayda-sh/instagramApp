@@ -48,7 +48,7 @@ const LogIn = () => {
             <p className="text-black">
             Don't have an account?
               <span className="text-[#4cb5f9]">
-                <NavLink to="signup">
+                <NavLink to="/signup">
                 Sign Up
                 </NavLink>
               </span>

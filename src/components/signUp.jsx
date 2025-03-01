@@ -97,7 +97,7 @@ const SignUpForm = () => {
           <p className="text-black">
             Already have an account?
             <span className="text-[#4cb5f9]">
-                <NavLink to="login">
+                <NavLink to="/login">
                     login
                 </NavLink>
             </span>
