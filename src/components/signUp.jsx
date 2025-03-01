@@ -17,7 +17,7 @@ const SignUpForm = () => {
   
       const { register, handleSubmit, formState: { errors } } = useForm({
           resolver: yupResolver(schema),
-          mode: "onBlur"
+          mode: "onChange"
       })
   
   
@@ -30,6 +30,7 @@ const SignUpForm = () => {
   
           try {
               const response = await client.post("/user/signup", user)
+              console.log(response.data);
               localStorage.setItem('token', response.data.jwt)
               toast.success("user added successful", {
                   type: "success"
@@ -57,12 +58,12 @@ const SignUpForm = () => {
         <div className="mt-4 justify-center flex">
           <form onSubmit={handleSubmit(submitForm)} className="justify-center flex flex-col">
             <label className="input input-bordered flex items-center gap-2  bg-[#fafafa]">
-              <input {...register("Email")} type="text" className="grow" placeholder="Email" />
+              <input {...register("email")} type="text" className="grow" placeholder="Email" />
               {errors?.email ? <span className="text-error">{errors.email.message}</span> : null}
             </label>
 
             <label className="input input-bordered flex items-center gap-2 mt-3 bg-[#fafafa]">
-              <input {...register("Username")} type="text" className="grow" placeholder="Username" />
+              <input {...register("username")} type="text" className="grow" placeholder="Username" />
               {errors?.username ? <span className="text-error">{errors.email.message}</span> : null}
             </label>
 
