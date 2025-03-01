@@ -17,7 +17,7 @@ const SignUpForm = () => {
   
       const { register, handleSubmit, formState: { errors } } = useForm({
           resolver: yupResolver(schema),
-          mode: "onBlur"
+          mode: "onChange"
       })
   
   
@@ -30,6 +30,7 @@ const SignUpForm = () => {
   
           try {
               const response = await client.post("/user/signup", user)
+              console.log(response.data);
               localStorage.setItem('token', response.data.jwt)
               toast.success("user added successful", {
                   type: "success"
