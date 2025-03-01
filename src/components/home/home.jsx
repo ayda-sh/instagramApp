@@ -1,13 +1,14 @@
+import PostCard from "./postCard";
 import SideBar from "./sideBar";
 
 const Home = () => {
   return (
-    <div>
+    <div className="grid grid-cols-3">
       <div className="w-[240px] border-r-1 border-[#ccc]">
         <SideBar />
       </div>
       <div>
-        <postCard/>
+        <PostCard/>
       </div>
     </div>
   );

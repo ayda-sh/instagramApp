@@ -1,4 +1,4 @@
-const postCard = () => {
+const PostCard = () => {
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
         <div className="max-w-md rounded-lg overflow-hidden shadow-lg bg-white">
@@ -15,3 +15,5 @@ const postCard = () => {
       </div>
     )
 }
+
+export default PostCard;
