@@ -12,7 +12,7 @@ const SignUpForm = () => {
    const schema = yup.object({
           username: yup.string().required(),
           email: yup.string().required().email(),
-          password: yup.string().required().min(4).max(8),
+          password: yup.string().required().min(8).max(16),
       })
   
       const [isShowPassword, setIsShowPassword] = useState(false);
@@ -33,7 +33,7 @@ const SignUpForm = () => {
           try {
               const response = await client.post("/user/signup", user)
               console.log(response.data);
-              localStorage.setItem('token', response.data.jwt)
+              localStorage.setItem("token", response.data.jwt)
               toast.success("user added successful", {
                   type: "success"
               });
@@ -61,7 +61,7 @@ const SignUpForm = () => {
         <div className="mt-4 justify-center flex">
           <form onSubmit={handleSubmit(submitForm)} className="justify-center flex flex-col">
             <label className="input input-bordered flex items-center gap-2  bg-[#fafafa]">
-              <input {...register("email")} type="text" className="grow" placeholder="Email" />
+              <input {...register("email")} type="email" className="grow" placeholder="Email" />
               {errors?.email ? <span className="text-error">{errors.email.message}</span> : null}
             </label>
 
