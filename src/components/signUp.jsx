@@ -5,8 +5,10 @@ import * as yup from 'yup'
 import { client } from "../../lib/axios";
 import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const SignUpForm = () => {
+  const navigate = useNavigate()
    const schema = yup.object({
           username: yup.string().required(),
           email: yup.string().required().email(),
@@ -35,6 +37,7 @@ const SignUpForm = () => {
               toast.success("user added successful", {
                   type: "success"
               });
+              navigate("/login")
           }
           catch(error) {
              toast(error, {
@@ -64,7 +67,7 @@ const SignUpForm = () => {
 
             <label className="input input-bordered flex items-center gap-2 mt-3 bg-[#fafafa]">
               <input {...register("username")} type="text" className="grow" placeholder="Username" />
-              {errors?.username ? <span className="text-error">{errors.email.message}</span> : null}
+              {errors?.username ? <span className="text-error">{errors.username.message}</span> : null}
             </label>
 
             <label className="input input-bordered flex items-center gap-2 mt-3 bg-[#fafafa]">
@@ -82,7 +85,7 @@ const SignUpForm = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              {errors?.password ? <span className="text-error">{errors.email.message}</span> : null}
+              {errors?.password ? <span className="text-error">{errors.password.message}</span> : null}
             </label>
 
             <button
