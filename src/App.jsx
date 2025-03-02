@@ -8,17 +8,17 @@ import Create from "./components/create/create";
 import Profile from "./components/profile/profile";
 
 
-
 function App() {
  
 
   return (
    <div>
     <Routes>
+    
     <Route path="/" element={<Home/>} />
     <Route path="/signup" element={<SignUpForm/>} />
     <Route path="/login" element={<LogIn/>} />
-    <Route path="/home" element={<Home/>} />
+   
     <Route path="/search" element={<Search/>} />
     <Route path="/create" element={<Create/>} />
     <Route path="/profile" element={<Profile/>} />
