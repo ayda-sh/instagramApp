@@ -1,4 +1,4 @@
-// import { IoIosMore } from "react-icons/io";
+import { IoIosMore } from "react-icons/io";
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></link>
 import buildExps from './../../../node_modules/uri-js/dist/esnext/regexps-iri'; 
 const PostCard = () => {
