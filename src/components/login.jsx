@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 const LogIn = () => {
   const schema = yup.object({
     email: yup.string().email().required(),
-    password: yup.string().required().min(8).max(16),
+    password: yup.string().required(),
   });
   const {
     register,
@@ -23,12 +23,16 @@ const LogIn = () => {
 
     try {
       const response = await client.post("/user/login", user);
-      const { status } = response;
-      localStorage.setItem("token", response.data.jwt);
+      console.log(response);
+      
+      // const { status } = response;
+      localStorage.setItem("token", response.data.accessToken);
       toast.success("User successfully logged in.", {
         type: "success",
       });
     } catch (error) {
+      console.log(error);
+      
       toast.error(error.message, {
         type: "error",
       });
@@ -36,8 +40,10 @@ const LogIn = () => {
   };
 
   return (
-    <div className="container mx-auto flex justify-center mb-11 my-10">
+    <div className="container mx-auto flex justify-center mb-11 my-10 items-center gap-5">
+       <img className="w-[400px]" src="public/Group 91.png" alt="" />
       <div className="w-[400px] border border-[#dbdbdb] justify-center flex flex-col px-8 pb-8">
+       
         <div className="flex items-end justify-center">
           <h1 className="text-black text-5xl font-semibold"></h1>
           <img
@@ -92,7 +98,7 @@ const LogIn = () => {
               className="bg-[#4cb5f9] rounded px-7 py-2 mt-7 text-white"
               type="submit"
             >
-              SIGN UP
+              LOG IN
             </button>
           </form>
         </div>
