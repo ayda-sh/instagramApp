@@ -12,7 +12,7 @@ const SignUpForm = () => {
    const schema = yup.object({
           username: yup.string().required(),
           email: yup.string().required().email(),
-          password: yup.string().required().min(8).max(16),
+          password: yup.string().required(),
       })
   
       const [isShowPassword, setIsShowPassword] = useState(false);
@@ -33,13 +33,17 @@ const SignUpForm = () => {
           try {
               const response = await client.post("/user/signup", user)
               console.log(response.data);
-              localStorage.setItem("token", response.data.jwt)
+              
+              console.log(response.data);
+              localStorage.setItem("token", response.data.accessToken)
               toast.success("user added successful", {
                   type: "success"
               });
               navigate("/login")
           }
           catch(error) {
+            console.log(error);
+            
              toast(error, {
               type: "error"
              });
