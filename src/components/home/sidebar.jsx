@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const SideBar = () => {
   return (
     <div>
@@ -9,19 +11,27 @@ const SideBar = () => {
         />
         <div class="flex items-center mb-4 gap-2">
           <img src="public/Frame.png" alt="" />
-          <span class="ml-2 text-gray-600 hover:text-black">Home</span>
+          <span class="ml-2 text-gray-600 hover:text-black">
+            <NavLink to="/home">Home</NavLink>
+          </span>
         </div>
         <div class="flex items-center mb-4 gap-2">
           <img src="public/Frame (1).png" alt="" />
-          <span class="ml-2 text-gray-600 hover:text-black">Search</span>
+          <span class="ml-2 text-gray-600 hover:text-black">
+            <NavLink to="/search">Search</NavLink>
+          </span>
         </div>
         <div class="flex items-center mb-4 gap-2">
           <img src="public/Frame (2).png" alt="" />
-          <span class="ml-2 text-gray-600 hover:text-black">Create</span>
+          <span class="ml-2 text-gray-600 hover:text-black">
+            <NavLink to="/create">Create</NavLink>
+          </span>
         </div>
         <div class="flex items-center mb-4 gap-2">
           <img className="rounded-full" src="public/Frame (3).png" alt="" />
-          <span class="ml-2 text-gray-600 hover:text-black">Profile</span>
+          <span class="ml-2 text-gray-600 hover:text-black">
+            <NavLink to="/profile">Profile</NavLink>
+          </span>
         </div>
       </div>
     </div>
