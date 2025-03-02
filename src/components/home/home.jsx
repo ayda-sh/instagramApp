@@ -1,5 +1,5 @@
 import PostCard from "./postCard";
-import SideBar from "./sideBar";
+import SideBar from "./soofi";
 
 const Home = () => {
   return (

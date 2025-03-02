@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import SideBar from "../home/sidebar";
+import SideBar from "../home/soofi";
 
 const Profile = () => {
   const { id } = useParams(); 
