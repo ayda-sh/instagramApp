@@ -27,6 +27,7 @@ const LogIn = () => {
       
       console.log("called", response.data.data.username);
       localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("token", response.data.data.username);
       console.log(response);
       toast.success("User successfully logged in.", {  
         type: "success",  
